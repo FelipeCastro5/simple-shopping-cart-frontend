@@ -1,10 +1,8 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom"
 import PrivateRoute from "./pages/routes/PrivateRoute"
 import Login from "./pages/public/Login"
-import MenuViaje from "./pages/private/MenuViaje"
-import MenuPrincipal from "./pages/private/MenuPrincipal"
-import PageLayout from "./components/PageLayout"
-import NuevoViaje from "./pages/private/NuevoViaje"
+import PageLayout from "./components/layout/PageLayout"
+import MainMenu from "./pages/private/main-menu"
 
 export default function App() {
   return (
@@ -14,9 +12,7 @@ export default function App() {
 
         {/* Rutas privadas dentro de layout */}
         <Route element={<PrivateRoute><PageLayout /></PrivateRoute>}>
-          <Route path="/menu-principal" element={<MenuPrincipal />} />
-          <Route path="/menu-viaje" element={<MenuViaje />} />
-            <Route path="/nuevo-viaje" element={<NuevoViaje />} />
+          <Route path="/main-menu" element={<MainMenu />} />
         </Route>
 
         {/* Redirección por defecto */}

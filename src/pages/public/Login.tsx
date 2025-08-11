@@ -6,13 +6,13 @@ export default function Login() {
 
   const handleLogin = () => {
     localStorage.setItem("auth", "true")
-    navigate("/menu-principal")
+    navigate("/main-menu")
   }
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="bg-white p-8 rounded shadow-md w-full max-w-sm">
-        <h1 className="text-2xl font-bold mb-4">Iniciar sesión</h1>
+        <h1 className="text-2xl font-bold mb-4">Entrar al carrito de compras</h1>
         <Button
           onClick={handleLogin}
           className="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"

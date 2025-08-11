@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom"
-import { LayoutTitleProvider, useLayoutTitle } from "../context/LayoutTitleContext"
 import LogoutButton from "./LogoutButton"
+import { LayoutTitleProvider, useLayoutTitle } from "@/context/LayoutTitleContext"
 
 function LayoutContent() {
     const { title } = useLayoutTitle()
