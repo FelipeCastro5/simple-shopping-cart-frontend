@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLayoutTitle } from "@/context/LayoutTitleContext";
 import { getAllProducts, type Product } from "@/services/adapters/products.adapter";
+import { getCart, addToCart as addCartApi } from "@/services/adapters/cart.adapter";
 
 export function useMainMenu() {
   const { setTitle } = useLayoutTitle();
@@ -10,8 +11,9 @@ export function useMainMenu() {
   const [bestCombination, setBestCombination] = useState<Product[]>([]);
 
   useEffect(() => {
-    setTitle(<>MENU PRINCIPAL</>);
+    setTitle("MENU PRINCIPAL"); // ✅ Sin JSX, compila en .ts
     loadProducts();
+    loadCart();
   }, []);
 
   const loadProducts = async () => {
@@ -27,8 +29,30 @@ export function useMainMenu() {
     }
   };
 
-  const addToCart = (producto: Product) => {
-    setCart((prev) => [...prev, producto]);
+  const loadCart = async () => {
+    try {
+      const res = await getCart();
+      if (res.status === 200) {
+        setCart(res.data);
+      } else {
+        console.error("Error cargando carrito:", res.msg);
+      }
+    } catch (err) {
+      console.error("Error en loadCart:", err);
+    }
+  };
+
+  const addToCart = async (producto: Product) => {
+    try {
+      const res = await addCartApi(producto.id);
+      if (res.status === 201) {
+        await loadCart(); // 🔄 Recarga desde el backend
+      } else {
+        console.error("Error agregando al carrito:", res.msg);
+      }
+    } catch (err) {
+      console.error("Error en addToCart:", err);
+    }
   };
 
   const findBestCombination = (products: Product[], budget: number) => {
