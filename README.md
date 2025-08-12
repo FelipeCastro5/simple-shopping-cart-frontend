@@ -51,6 +51,7 @@ src/
 ├───lib              # Funciones utilitarias
 ├───pages            # Vistas (públicas y privadas)
 └───services         # Lógica de consumo de API y adaptadores
+```
 
 ---
 
