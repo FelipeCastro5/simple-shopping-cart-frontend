@@ -1,71 +1,71 @@
-# React + TypeScript + Vite
+# Simple Shopping Cart - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Descripción y propósito
+Este frontend implementa una **SPA (Single Page Application)** que permite listar productos, agregarlos al carrito y visualizar su contenido, consumiendo el backend desarrollado en **NestJS**.  
+Forma parte de la prueba técnica para la postulación al rol de **Desarrollador Web** en HoyTrabajas.
 
-Currently, two official plugins are available:
+**Autor:** Daniel Felipe Castro Lizarazo  
+**Propósito:** Proveer una interfaz amigable y responsiva para interactuar con la API del carrito de compras.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Funcionalidades
+- Autenticación básica con rutas privadas y públicas.
+- Listado de productos desde el backend.
+- Agregar productos al carrito.
+- Visualizar contenido del carrito en tiempo real.
+- Diseño responsivo con TailwindCSS.
+- Componentes reutilizables y tipados con TypeScript.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Tecnologías utilizadas
+- **React 19** – Librería para construir interfaces.
+- **TypeScript 5.8** – Tipado estático.
+- **Vite 7** – Bundler y servidor de desarrollo ultrarrápido.
+- **React Router DOM 7.6** – Ruteo de vistas públicas y privadas.
+- **Axios 1.11** – Cliente HTTP para consumir la API.
+- **React Hook Form 7.60** – Manejo de formularios.
+- **Zod 4.0** – Validaciones de datos.
+- **TailwindCSS 4.1** – Estilos utilitarios.
+- **Shadcn/UI + Radix UI** – Componentes accesibles y personalizables.
+- **Lucide React** – Iconos SVG modernos.
+- **Class Variance Authority + Tailwind Merge** – Gestión avanzada de clases.
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## Estructura del proyecto
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+```plaintext
+src/
+│   App.tsx          # Componente raíz
+│   main.tsx         # Punto de entrada
+│   index.css        # Estilos globales
+│
+├───assets           # Recursos estáticos
+├───components       # Componentes reutilizables
+│   ├───items        # Componentes de productos y carrito
+│   ├───layout       # Layout y navegación
+│   └───ui           # Componentes UI (Shadcn/UI)
+│
+├───context          # Contextos globales
+├───hooks            # Hooks personalizados
+├───lib              # Funciones utilitarias
+├───pages            # Vistas (públicas y privadas)
+└───services         # Lógica de consumo de API y adaptadores
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Instrucciones de instalación
+1. **Clonar el repositorio:**
+   ```bash
+   git clone https://github.com/FelipeCastro5/simple-shopping-cart-frontend.git
+   cd simple-shopping-cart-frontend
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-# app-frontend-react-vite-ts
-# simple-shopping-cart-frontend
+2. **Instalar dependencias**
+    npm install
+
+3. **Ejecución local**
+    npm run dev
+
+    Backend disponible en: http://localhost:5173
+  
+    Documentación Swagger: http://localhost:3000/swagger/#/
