@@ -45,7 +45,7 @@ export function useMainMenu() {
   const addToCart = async (producto: Product) => {
     try {
       const res = await addCartApi(producto.id);
-      if (res.status === 201) {
+      if (res.status >= 200 && res.status < 300) {
         await loadCart(); // 🔄 Recarga desde el backend
       } else {
         console.error("Error agregando al carrito:", res.msg);
