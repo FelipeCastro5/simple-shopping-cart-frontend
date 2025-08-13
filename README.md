@@ -72,11 +72,14 @@ Se recomienda usar:
    git clone https://github.com/FelipeCastro5/simple-shopping-cart-frontend.git
    cd simple-shopping-cart-frontend
 
-2. **Instalar dependencias desde la carpeta razi del proyecto con el comando:**
+2. **Instalar dependencias desde la carpeta raiz del proyecto con el comando:**
+   ```bash
     npm install
-
-3. **Ejecución local desde la carpeta razi del proyecto con el comando:**
+    ```
+3. **Ejecución local desde la carpeta raiz del proyecto con el comando:**
+   ```bash
     npm run dev
+    ```
 
     - Frontend disponible en: http://localhost:5173
     - El Backend debe estar corriendo en: http://localhost:3000
