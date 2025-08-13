@@ -14,6 +14,8 @@ Forma parte de la prueba técnica para la postulación al rol de **Desarrollador
 - Visualizar contenido del carrito en tiempo real.
 - Diseño responsivo con TailwindCSS.
 - Componentes reutilizables y tipados con TypeScript.
+- Solución al ejercicio: Combinación de productos con el mayor valor total sin exceder el
+presupuesto.
 
 ---
 
@@ -56,6 +58,15 @@ src/
 ---
 
 ## Instrucciones de instalación
+### A. Requisitos de Node.js
+Para ejecutar este proyecto localmente, necesitarás **Node.js** y **npm** instalados en tu máquina.  
+Puedes descargar Node.js desde [https://nodejs.org](https://nodejs.org).
+
+Se recomienda usar:
+- **Node.js 20.x (LTS)**
+- **npm 9.x**
+
+### B. Instalación del Repositorio localmente
 1. **Clonar el repositorio:**
    ```bash
    git clone https://github.com/FelipeCastro5/simple-shopping-cart-frontend.git
@@ -67,6 +78,7 @@ src/
 3. **Ejecución local**
     npm run dev
 
-    Backend disponible en: http://localhost:5173
-  
-    Documentación Swagger: http://localhost:3000/swagger/#/
+    Frontend disponible en: http://localhost:5173
+    El Backend debe estar corriendo en: http://localhost:3000
+    Documentación Swagger edl backend: http://localhost:3000/swagger/#/
+> ⚠️ Asegúrate de que estos puertos estén libres antes de ejecutar ambos proyectos.
