@@ -78,7 +78,7 @@ Se recomienda usar:
 3. **Ejecución local**
     npm run dev
 
-    Frontend disponible en: http://localhost:5173
-    El Backend debe estar corriendo en: http://localhost:3000
-    Documentación Swagger edl backend: http://localhost:3000/swagger/#/
+    - Frontend disponible en: http://localhost:5173
+    - El Backend debe estar corriendo en: http://localhost:3000
+    - Documentación Swagger edl backend: http://localhost:3000/swagger/#/
 > ⚠️ Asegúrate de que estos puertos estén libres antes de ejecutar ambos proyectos.
